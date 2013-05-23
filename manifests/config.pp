@@ -6,14 +6,18 @@
 #   [*datadir*]                 - path to datadir.
 #   [*default_engine]           - configure a default table engine
 #   [*etc_root_password*]       - whether to save /etc/my.cnf.
+#   [*expire_logs_days*]        - no. of days for automatic binary log file removal
 #   [*innodb_buffer_pool_size*] - size of the buffer pool
 #   [*innodb_file_per_table*]   - whether to enable file-per-table mode
+#   [*log_bin*]                 - path to mysql binary log, if enabled by *server_id*
 #   [*log_error]                - path to mysql error log
+#   [*max_binlog_size*]         - maximum size of each binary log file
 #   [*old_root_password*]       - previous root user password,
 #   [*port*]                    - port to bind service.
 #   [*restart]                  - whether to restart mysqld (true/false)
 #   [*root_group]               - use specified group for root-owned files
 #   [*root_password*]           - root user password.
+#   [*server_id*]               - set server ID and enable binary logging
 #   [*service_name*]            - mysql service name.
 #   [*socket*]                  - mysql socket.
 #   [*ssl]                      - enable ssl
@@ -41,8 +45,11 @@ class mysql::config(
   $datadir                 = $mysql::datadir,
   $default_engine          = $mysql::default_engine,
   $etc_root_password       = $mysql::etc_root_password,
+  $expire_logs_days        = $mysql::params::expire_logs_days,
   $innodb_buffer_pool_size = $mysql::innodb_buffer_pool_size,
   $innodb_file_per_table   = $mysql::innodb_file_per_table,
+  $max_binlog_size         = $mysql::params::max_binlog_size,
+  $log_bin                 = $mysql::params::log_bin,
   $log_error               = $mysql::log_error,
   $pidfile                 = $mysql::pidfile,
   $port                    = $mysql::port,
@@ -51,6 +58,7 @@ class mysql::config(
   $root_group              = $mysql::root_group,
   $root_password           = $mysql::root_password,
   $old_root_password       = $mysql::old_root_password,
+  $server_id               = $mysql::params::server_id,
   $service_name            = $mysql::service_name,
   $socket                  = $mysql::socket,
   $ssl                     = $mysql::ssl,

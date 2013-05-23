@@ -16,15 +16,18 @@ class mysql::params {
   $config_template         = 'mysql/my.cnf.erb'
   $default_engine          = 'UNSET'
   $etc_root_password       = false
+  $expire_logs_days        = 10
   $innodb_buffer_pool_size = 'UNSET'
   $innodb_file_per_table   = false
   $manage_service          = true
+  $max_binlog_size         = 100M
   $old_root_password       = ''
   $package_ensure          = 'present'
   $purge_conf_dir          = false
   $port                    = 3306
   $root_password           = 'UNSET'
   $restart                 = true
+  $server_id               = 'UNSET'
   $ssl                     = false
 
   case $::operatingsystem {
@@ -101,6 +104,7 @@ class mysql::params {
       $socket               = '/var/run/mysqld/mysqld.sock'
       $pidfile              = '/var/run/mysqld/mysqld.pid'
       $config_file          = '/etc/mysql/my.cnf'
+      $log_bin              = '/var/log/mysql/mysql-bin.log'
       $log_error            = '/var/log/mysql/error.log'
       $ruby_package_name    = 'libmysql-ruby'
       $python_package_name  = 'python-mysqldb'
