@@ -10,6 +10,8 @@
 #   [*expire_logs_days*]        - no. of days for automatic binary log file removal
 #   [*innodb_buffer_pool_size*] - size of the buffer pool
 #   [*innodb_file_per_table*]   - whether to enable file-per-table mode
+#   [*innodb_log_buffer_size*]  - size of the log file buffer
+#   [*innodb_log_file_size*]    - size of the log file
 #   [*log_bin*]                 - path to mysql binary log, if enabled by *server_id*
 #   [*log_error]                - path to mysql error log
 #   [*max_binlog_size*]         - maximum size of each binary log file
@@ -50,6 +52,8 @@ class mysql::config(
   $expire_logs_days        = $mysql::params::expire_logs_days,
   $innodb_buffer_pool_size = $mysql::innodb_buffer_pool_size,
   $innodb_file_per_table   = $mysql::innodb_file_per_table,
+  $innodb_log_buffer_size  = $mysql::innodb_log_buffer_size,
+  $innodb_log_file_size    = $mysql::innodb_log_file_size,
   $max_binlog_size         = $mysql::params::max_binlog_size,
   $log_bin                 = $mysql::params::log_bin,
   $log_error               = $mysql::log_error,

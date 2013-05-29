@@ -20,6 +20,8 @@ class mysql::params {
   $expire_logs_days        = 10
   $innodb_buffer_pool_size = 'UNSET'
   $innodb_file_per_table   = false
+  $innodb_log_buffer_size  = 'UNSET'
+  $innodb_log_file_size    = 'UNSET'
   $manage_service          = true
   $max_binlog_size         = 100M
   $old_root_password       = ''
