@@ -8,6 +8,8 @@
 #   [*etc_root_password*]       - whether to save /etc/my.cnf.
 #   [*innodb_buffer_pool_size*] - size of the buffer pool
 #   [*innodb_file_per_table*]   - whether to enable file-per-table mode
+#   [*innodb_log_buffer_size*]  - size of the log file buffer
+#   [*innodb_log_file_size*]    - size of the log file
 #   [*log_error]                - path to mysql error log
 #   [*old_root_password*]       - previous root user password,
 #   [*port*]                    - port to bind service.
@@ -43,6 +45,8 @@ class mysql::config(
   $etc_root_password       = $mysql::etc_root_password,
   $innodb_buffer_pool_size = $mysql::innodb_buffer_pool_size,
   $innodb_file_per_table   = $mysql::innodb_file_per_table,
+  $innodb_log_buffer_size  = $mysql::innodb_log_buffer_size,
+  $innodb_log_file_size    = $mysql::innodb_log_file_size,
   $log_error               = $mysql::log_error,
   $pidfile                 = $mysql::pidfile,
   $port                    = $mysql::port,

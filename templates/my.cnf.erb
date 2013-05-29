@@ -39,6 +39,12 @@ default-storage-engine = <%= default_engine %>
 <% if innodb_buffer_pool_size != 'UNSET' %>
 innodb_buffer_pool_size = <%= innodb_buffer_pool_size %>
 <% end %>
+<% if innodb_log_buffer_size != 'UNSET' %>
+innodb_log_buffer_size = <%= innodb_log_buffer_size %>
+<% end %>
+<% if innodb_log_file_size != 'UNSET' %>
+innodb_log_file_size = <%= innodb_log_file_size %>
+<% end %>
 <% if innodb_file_per_table -%>
 innodb_file_per_table
 <% end %>
