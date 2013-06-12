@@ -36,18 +36,18 @@ max_binlog_size    = 100M
 <% if default_engine != 'UNSET' %>
 default-storage-engine = <%= default_engine %>
 <% end %>
-<% if innodb_buffer_pool_size != 'UNSET' %>
+<% if innodb_buffer_pool_size != 'UNSET' -%>
 innodb_buffer_pool_size = <%= innodb_buffer_pool_size %>
-<% end %>
-<% if innodb_log_buffer_size != 'UNSET' %>
+<% end -%>
+<% if innodb_log_buffer_size != 'UNSET' -%>
 innodb_log_buffer_size = <%= innodb_log_buffer_size %>
-<% end %>
-<% if innodb_log_file_size != 'UNSET' %>
+<% end -%>
+<% if innodb_log_file_size != 'UNSET' -%>
 innodb_log_file_size = <%= innodb_log_file_size %>
-<% end %>
+<% end -%>
 <% if innodb_file_per_table -%>
 innodb_file_per_table
-<% end %>
+<% end -%>
 <% if ssl == true %>
 ssl-ca    = <%= ssl_ca %>
 ssl-cert  = <%= ssl_cert %>
